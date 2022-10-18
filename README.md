@@ -1,12 +1,13 @@
 # React-Formik-Tutorial
 
-[]
+[Formik](#Formik) 
 
-## Formik
+[useFormik Hook](#useformik-hook)
+
+
+# Formik
 
 Formik is a library that helps you deal with forms in React.
-
-## Create a Simple Form
 
 ```js
 function YoutubeForm() {
@@ -28,8 +29,7 @@ function YoutubeForm() {
   )
 }
 ```
-
-## useFormik Hook
+# useFormik Hook
 
 https://www.youtube.com/watch?v=tEU5k2O5qSU&list=PLC3y8-rFHvwiPmFbtzEWjESkqBVDbdgGu&index=3
 
