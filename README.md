@@ -33,3 +33,22 @@ function YoutubeForm() {
 
 https://www.youtube.com/watch?v=tEU5k2O5qSU&list=PLC3y8-rFHvwiPmFbtzEWjESkqBVDbdgGu&index=3
 
+
+Run below command to add formik to our project.
+
+```bash
+npm add formik
+```
+
+# Managing Form State
+
+https://www.youtube.com/watch?v=c4EdCbk3K1c&list=PLC3y8-rFHvwiPmFbtzEWjESkqBVDbdgGu&index=4
+
+- Managing form state using formik.
+- **Form State** is an obect that maintains the values of different form fields.
+
+Time: 0:48 
+
+
+
+
