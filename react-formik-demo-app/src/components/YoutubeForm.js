@@ -3,12 +3,17 @@ import {useFormik} from 'formik';
 
 function YoutubeForm() {
 
+  const initialValues = {
+    name: 'Ajith',
+    email: '',
+    channel: ''
+  }
+
+  const onSubmit = values => {
+    console.log('form data', values)
+  }
+
     const formik = useFormik({
-      initialValues: {
-        name: '',
-        email: '',
-        channel: ''
-      },
       onSubmit: values => {
         console.log('form data', values)
       },
@@ -22,7 +27,6 @@ function YoutubeForm() {
         } else if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(values.email)) {
             errors.email = 'Invalid email format'
         }
-        
         if (!values.channel) {
             errors.channel = 'Required'
         }
