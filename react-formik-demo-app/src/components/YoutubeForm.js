@@ -8,13 +8,33 @@ function YoutubeForm() {
         name: '',
         email: '',
         channel: ''
+      },
+      onSubmit: values => {
+        console.log('form data', values)
+      },
+      validate: values => {
+        // valoues.name values.email values.channel; 
+        let errors = {}
+        if (!values.name) {
+            errors.name = 'Required'
+        } if (!values.email) {
+            errors.email = 'Required'
+        } else if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(values.email)) {
+            errors.email = 'Invalid email format'
+        }
+        
+        if (!values.channel) {
+            errors.channel = 'Required'
+        }
+        return errors;
       }
+
+  
     });
 
-    console.log('Form values', formik.values);
   return (
     <div>
-        <form>
+        <form onSubmit={formik.handleSubmit}>
             <label htmlFor='name'>Name</label>
             <input 
               type="text" 

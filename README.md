@@ -95,16 +95,35 @@ const formik = useFormik({
 
 # Handling Form Submission
 
-https://www.youtube.com/watch?v=DZiltZH1-d0&list=PLC3y8-rFHvwiPmFbtzEWjESkqBVDbdgGu&index=5 
+https://www.youtube.com/watch?v=DZiltZH1-d0&list=PLC3y8-rFHvwiPmFbtzEWjESkqBVDbdgGu&index=5
 
+```js
+const formik = useFormik({
+      initialValues: {
+        name: '',
+        email: '',
+        channel: ''
+      },
+      onSubmit: values => {
+        console.log('form data', values)
+      }
+    });
 
+  return (
+    <div>
+        <form onSubmit={formik.handleSubmit}>
+      </div>
+```
 
-- Set this 2 properties for all inputs.
+## Steps
 
+1. In form tag, we specify *onSubmit* prop and set it equal to *formik.handleSubmit*.
+
+2. *onSubmit* method receives the latest values of form data as its argument.
  
+# 6. Form validation
 
+https://www.youtube.com/watch?v=tthHwRRGkj0&list=PLC3y8-rFHvwiPmFbtzEWjESkqBVDbdgGu&index=6
 
-
-
-
+For every field, we add required attributes. In other all fields are important and neds to implementated,
 
