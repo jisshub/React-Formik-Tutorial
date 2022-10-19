@@ -46,6 +46,7 @@ import {useFormik} from 'formik';
                 id="name" 
                 name='name'
                 onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
                 value={formik.values.name}
               />
               {formik.errors.name ? 
@@ -62,6 +63,7 @@ import {useFormik} from 'formik';
                 id='email' 
                 name='email'
                 onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
                 value={formik.values.email}
               />
               {formik.errors.email ? 
@@ -78,6 +80,7 @@ import {useFormik} from 'formik';
                 id='channel'
                 name='channel'
                 onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
                 value={formik.values.channel}
               />
               {formik.errors.channel ? 
@@ -87,7 +90,6 @@ import {useFormik} from 'formik';
               }
           </div>
           <button type='submit'>Submit</button>
-
         </form>
     </div>
   )

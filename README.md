@@ -13,6 +13,8 @@
 [Displaying Error Messages](#displaying-error-messages)
 
 [Visited Fields](#visited-fields)
+
+
 # Formik
 
 Formik is a library that helps you deal with forms in React.
@@ -237,3 +239,8 @@ If the errors exist in name input, we render the div element. Similarly we write
 2. *validate* function checks the value of form field and basically populate the objects with appropriate error messages.
 
 # Visited Fields
+
+https://www.youtube.com/watch?v=GGl__utJ0t0
+
+time: 1:51
+
