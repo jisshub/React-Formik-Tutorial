@@ -17,7 +17,7 @@ import {useFormik} from 'formik';
         errors.name = 'Required'
     } if (!values.email) {
         errors.email = 'Required'
-    } else if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(values.email)) {
+    } else if (/^\w+([\\.-]?\w+)*@\w+([\\.-]?\w+)*(\.\w{2,3})+$/.test(values.email)) {
         errors.email = 'Invalid email format';
     }
     if (!values.channel) {
@@ -33,7 +33,7 @@ import {useFormik} from 'formik';
       validate
     });
 
-    console.log("form values", formik.errors);
+    console.log("Form Errors", formik.errors);
 
   return (
     <div>
@@ -87,7 +87,7 @@ import {useFormik} from 'formik';
               }
           </div>
           <button type='submit'>Submit</button>
-          
+
         </form>
     </div>
   )

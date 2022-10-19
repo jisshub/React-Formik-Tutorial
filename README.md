@@ -9,6 +9,10 @@
 [Handling Form Submission](#handling-form-submission)
 
 [Form Validation](#form-validation)
+
+[Displaying Error Messages](#displaying-error-messages)
+
+[Visited Fields](#visited-fields)
 # Formik
 
 Formik is a library that helps you deal with forms in React.
@@ -226,3 +230,10 @@ Display error messages only if it exists. For that we use conditional rendering.
 
 If the errors exist in name input, we render the div element. Similarly we write error messages for other inputs as well.
 
+## Workflow
+
+1. First we create a *validate* function and pass it to *useFormik* hook.
+
+2. *validate* function checks the value of form field and basically populate the objects with appropriate error messages.
+
+# Visited Fields
