@@ -242,5 +242,17 @@ If the errors exist in name input, we render the div element. Similarly we write
 
 https://www.youtube.com/watch?v=GGl__utJ0t0
 
-time: 1:51
+- We have to store the visited fields in an object called *touched*. 
+
+- **formik.touched** 
+
+- *touched* gives an information about whether a field has been visited or not.
+
+```js
+console.log("Form Touched", formik.touched);
+```
+
+# Improving Validation UX
+
+
 

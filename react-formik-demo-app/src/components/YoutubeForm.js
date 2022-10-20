@@ -33,7 +33,7 @@ import {useFormik} from 'formik';
       validate
     });
 
-    console.log("Form Errors", formik.errors);
+    console.log("Form Touched", formik.touched);
 
   return (
     <div>
