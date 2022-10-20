@@ -242,7 +242,7 @@ If the errors exist in name input, we render the div element. Similarly we write
 
 https://www.youtube.com/watch?v=GGl__utJ0t0
 
-- We have to store the visited fields in an object called *touched*. 
+- We have to store the visited fields in an object called *touched*. Ie if we touch an input field we have to store that information in an object called *touched*.
 
 - **formik.touched** 
 
@@ -254,5 +254,24 @@ console.log("Form Touched", formik.touched);
 
 # Improving Validation UX
 
+Show the error message only if the field is visited and error exist.
 
+We use touched object to conditionally render error messages on our front end.
+
+```js
+{formik.touched.name && formik.errors.name ? 
+  <div className='error'>
+    {formik.errors.name}
+  </div>: null
+}
+
+{formik.touched.email && formik.errors.email ? 
+  <div className='error'>
+    {formik.errors.email}
+  </div>: null
+}
+```
+
+Here if user touches the field and if there is an error, We display the div tag with error message.
+We use **touched** object here. 
 
