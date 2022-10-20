@@ -14,7 +14,9 @@
 
 [Visited Fields](#visited-fields)
 
+[Improving Validation UX](#schema-validation-with-yup)
 
+[Schema validation with Yup](#schema-validation-with-yup)
 # Formik
 
 Formik is a library that helps you deal with forms in React.
@@ -274,4 +276,38 @@ We use touched object to conditionally render error messages on our front end.
 
 Here if user touches the field and if there is an error, We display the div tag with error message.
 We use **touched** object here. 
+
+# Schema validation with Yup
+
+https://www.youtube.com/watch?v=PpdXB9Ru6oI&list=PLC3y8-rFHvwiPmFbtzEWjESkqBVDbdgGu&index=11
+
+1. Install yup using npm
+
+```bash
+npm install yup
+```
+
+2. Set a validation schema for our inputs.
+
+```js
+const validationSchema = Yup.object({
+  name: Yup.string().required('Required'),
+  email: Yup.string()
+          .email('Invaid Email Format')
+          .required('Required'),
+  channel: Yup.string().required('Required')
+});
+```
+
+3. Update the *useFormik* hook by adding *validationSchema* function as an argument.
+
+```js
+const formik = useFormik({
+  initialValues,
+  onSubmit,
+  validationSchema
+});
+```
+
+
 
