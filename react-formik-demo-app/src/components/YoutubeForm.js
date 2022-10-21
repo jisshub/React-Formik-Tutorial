@@ -1,5 +1,5 @@
 import React from 'react';
-import {useFormik} from 'formik';
+import {Formik, Form} from 'formik';
 import * as Yup from 'yup'; 
 
   const initialValues = {
@@ -36,73 +36,60 @@ import * as Yup from 'yup';
   });
 
   function YoutubeForm() {
-    const formik = useFormik({
-      initialValues,
-      onSubmit,
-      validationSchema
-      // validate
-    });
-
-    console.log("Form Touched", formik.touched);
-
-  return (
-    <div>
-        <form onSubmit={formik.handleSubmit}>
-
-          <div className='form-control'>
-            <label htmlFor='name'>Name</label>
-              <input 
-                type="text" 
-                id="name" 
-                name='name'
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-                value={formik.values.name}
-              />
-              {formik.touched.name && formik.errors.name ? 
-                <div className='error'>
-                  {formik.errors.name}
-                </div>: null
-              }
-          </div>
+    return (
+      <Formik 
+        initialValues={initialValues} 
+        onSubmit={onSubmit}
+        validationSchema={validationSchema}>
+          <Form>
+            <div className='form-control'>
+              <label htmlFor='name'>Name</label>
+                <input 
+                  type="text" 
+                  id="name" 
+                  name='name'
+                  {...Formik.getFieldProps('name')}
+                />
+                {Formik.touched.name && Formik.errors.name ? 
+                  <div className='error'>
+                    {Formik.errors.name}
+                  </div>: null
+                }
+            </div>
+              
+            <div className='form-control'>
+              <label htmlFor='email'>E-mail</label>
+                <input 
+                  type={'email'} 
+                  id='email' 
+                  name='email'
+                  {...Formik.getFieldProps('email')}
+                />
+                {Formik.touched.email && Formik.errors.email ? 
+                  <div className='error'>
+                    {Formik.errors.email}
+                  </div>: null
+                }
+            </div>
             
-          <div className='form-control'>
-            <label htmlFor='email'>E-mail</label>
-              <input 
-                type={'email'} 
-                id='email' 
-                name='email'
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-                value={formik.values.email}
-              />
-              {formik.touched.email && formik.errors.email ? 
-                <div className='error'>
-                  {formik.errors.email}
-                </div>: null
-              }
-          </div>
-          
-          <div className='form-control'>
-            <label htmlFor='channel'>Channel</label>
-              <input 
-                type={'channel'} 
-                id='channel'
-                name='channel'
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-                value={formik.values.channel}
-              />
-              {formik.touched.channel && formik.errors.channel ? 
-                <div className='error'>
-                  {formik.errors.channel}
-                </div> : null
-              }
-          </div>
-          <button type='submit'>Submit</button>
-        </form>
-    </div>
-  )
-}
+            <div className='form-control'>
+              <label htmlFor='channel'>Channel</label>
+                <input 
+                  type={'channel'} 
+                  id='channel'
+                  name='channel'
+                  {...Formik.getFieldProps('channel')}
+                />
+                {Formik.touched.channel && Formik.errors.channel ? 
+                  <div className='error'>
+                    {Formik.errors.channel}
+                  </div> : null
+                }
+            </div>
+            <button type='submit'>Submit</button>
+          </Form>
+      </Formik>
+    )
+  }
 
 export default YoutubeForm;

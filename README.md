@@ -17,6 +17,12 @@
 [Improving Validation UX](#schema-validation-with-yup)
 
 [Schema validation with Yup](#schema-validation-with-yup)
+
+[Reducing Boilerplate/Code Refactoring](#reducing-boilerplatecode-refactoring)
+
+[Formik Component](#formik-component)
+
+[Field Component](#field-component)
 # Formik
 
 Formik is a library that helps you deal with forms in React.
@@ -212,7 +218,6 @@ import {useFormik} from 'formik';
 }
 export default YoutubeForm;
 ```
-
 # Displaying Error Messages
 
 Display error messages only if it exists. For that we use conditional rendering.
@@ -309,7 +314,101 @@ const formik = useFormik({
 });
 ```
 
-# Reducing Boilerplate
+# Reducing Boilerplate/Code Refactoring
+
+https://www.youtube.com/watch?v=Gcs9cBI2Cw8&list=PLC3y8-rFHvwiPmFbtzEWjESkqBVDbdgGu&index=12
+
+- We can observe here that same code is repeated in every inputs. For example, *onChange* event, *onBlur* events and *value* attribute all present in the every input fields. So we can replace these lines of code with a single line of code.
+
+## Old Code
+
+```js
+onChange={formik.handleChange}
+onBlur={formik.handleBlur}
+value={formik.values.channel}
+```
+
+## New Code
+
+```js
+{...formik.getFieldProps('channel')}
+```
+
+## Replaced Input Field
+
+**YoutubeForm.js**
+
+```js
+<input 
+  type="text" 
+  id="name" 
+  name='name'
+  {...formik.getFieldProps('name')}
+/>
+<input 
+  type={'email'} 
+  id='email' 
+  name='email'
+  {...formik.getFieldProps('email')}
+/>
+<input 
+  type={'channel'} 
+  id='channel'
+  name='channel'
+  {...formik.getFieldProps('channel')}
+/>
+```
+
+So we replaced repeating codes with just a single line of code.
+
+# Formik Component
+
+## 4 Components
+
+1. Formik
+
+2. Form
+
+3. Field
+
+4. ErrorMessage
+
+### Formik Component
+
+- *Formik* component is a replacement to *useFormik* hook. The arguments we pass to *useFormik* as object will be *props* in *Formik* component.
+
+- So we replace *useFormik* hook with *Formik* component step by step.
+
+- **Step 1**: Import **Formik** component.
+
+- **Step 2**: We remove the call to **useFormik** hook.
+
+- **Step 3**: We wrap the entire form with this **Formik** component.
+
+- **Step 4**: Pass in props to this **Formik** component. Ie. pass initialValues, onSubmit and validationSchema as props to Formik component.
+
+# Form Component
+
+Implement Form component in our code in step by step.
+
+### Step 1:
+Import **Form** component from formik library.
+
+### Step 2:
+Replace the html form element with **Form** element.
+
+### Step 3:
+Remove the **onSubmit** prop from the **Form** element. Because **Form** component is a small wrapper around html form element that automatically hooks into Formik components **handleSubmit** method. So Form component automaticlly links our **onSubmit** event to our form's **submit** event.
+
+# Field Component
+
+
+
+
+
+
+
+
 
 
 
