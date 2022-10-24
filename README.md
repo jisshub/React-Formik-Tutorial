@@ -23,6 +23,7 @@
 [Formik Component](#formik-component)
 
 [Field Component](#field-component)
+
 # Formik
 
 Formik is a library that helps you deal with forms in React.
@@ -404,7 +405,15 @@ Remove the **onSubmit** prop from the **Form** element. Because **Form** compone
 
 https://www.youtube.com/watch?v=THREPzYbFtE&list=PLC3y8-rFHvwiPmFbtzEWjESkqBVDbdgGu&index=15
 
+## Implementing Field Component
 
+### Steps
+
+1. Import Field from formik.
+
+2. Replace Input tags with Field component.
+
+<!-- time: 0:48 -->
 
 
 

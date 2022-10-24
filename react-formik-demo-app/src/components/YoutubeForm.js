@@ -1,5 +1,5 @@
 import React from 'react';
-import {Formik, Form} from 'formik';
+import {Formik, Form, Field} from 'formik';
 import * as Yup from 'yup'; 
 
   const initialValues = {
@@ -44,11 +44,9 @@ import * as Yup from 'yup';
           <Form>
             <div className='form-control'>
               <label htmlFor='name'>Name</label>
-                <input 
+                <Field 
                   type="text" 
-                  id="name" 
-                  name='name'
-                  {...Formik.getFieldProps('name')}
+                  name="name"
                 />
                 {Formik.touched.name && Formik.errors.name ? 
                   <div className='error'>
@@ -59,11 +57,10 @@ import * as Yup from 'yup';
               
             <div className='form-control'>
               <label htmlFor='email'>E-mail</label>
-                <input 
-                  type={'email'} 
+                <Field 
+                  type='email'
                   id='email' 
                   name='email'
-                  {...Formik.getFieldProps('email')}
                 />
                 {Formik.touched.email && Formik.errors.email ? 
                   <div className='error'>
@@ -74,11 +71,10 @@ import * as Yup from 'yup';
             
             <div className='form-control'>
               <label htmlFor='channel'>Channel</label>
-                <input 
+                <Field
                   type={'channel'} 
                   id='channel'
                   name='channel'
-                  {...Formik.getFieldProps('channel')}
                 />
                 {Formik.touched.channel && Formik.errors.channel ? 
                   <div className='error'>
