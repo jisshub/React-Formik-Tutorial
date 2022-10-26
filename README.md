@@ -24,6 +24,8 @@
 
 [Field Component](#field-component)
 
+[ErrorMessage Component](#errormessage-component)
+
 # Formik
 
 Formik is a library that helps you deal with forms in React.
