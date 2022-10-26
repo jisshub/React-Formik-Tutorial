@@ -404,7 +404,31 @@ Remove the **onSubmit** prop from the **Form** element. Because **Form** compone
 
 https://www.youtube.com/watch?v=THREPzYbFtE&list=PLC3y8-rFHvwiPmFbtzEWjESkqBVDbdgGu&index=15
 
+## Implementing Field Component
 
+### Steps
+
+1. Import Field from formik.
+
+2. Replace Input tags with Field component.
+
+3. Get rid of getFieldProps from input field.
+
+
+# ErrorMessage Component
+
+### Steps
+
+1. Import Errormessage from formik.
+
+```js
+<Field 
+  type="text" 
+  id="name" 
+  name='name'
+/>
+<ErrorMessage name='name' />
+```
 
 
 
