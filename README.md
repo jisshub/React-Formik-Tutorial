@@ -424,6 +424,11 @@ https://www.youtube.com/watch?v=THREPzYbFtE&list=PLC3y8-rFHvwiPmFbtzEWjESkqBVDbd
 
 1. Import Errormessage from formik.
 
+2. Replace the block of code rendering error message with ErrorMessage component.
+
+3. Assign name attribute.
+
+
 ```js
 <Field 
   type="text" 
@@ -432,6 +437,33 @@ https://www.youtube.com/watch?v=THREPzYbFtE&list=PLC3y8-rFHvwiPmFbtzEWjESkqBVDbd
 />
 <ErrorMessage name='name' />
 ```
+
+# Fields Revisited
+
+https://www.youtube.com/watch?v=TOPYgxjh9lk&list=PLC3y8-rFHvwiPmFbtzEWjESkqBVDbdgGu&index=18
+
+
+1. Additional components on Field component will pass through.
+
+2. Using textarea with Field component.
+
+```js
+<Field 
+  as='textarea'
+  id='comments'
+  name='comments'
+/>
+```
+  - Use *as* prop inside Field component.
+
+3. Using render props 
+
+
+
+<!-- time: 6:30 -->
+
+
+
 
 
 

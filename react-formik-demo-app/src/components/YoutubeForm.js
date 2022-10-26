@@ -5,26 +5,13 @@ import * as Yup from 'yup';
   const initialValues = {
     name: '',
     email: '',
-    channel: ''
+    channel: '',
+    comments: '',
+    address: ''
   }
 
   const onSubmit = values => {
     console.log('form data', values)
-  }
-
-  const validate = values => {
-    let errors = {}
-    if (!values.name) {
-        errors.name = 'Required'
-    } if (!values.email) {
-        errors.email = 'Required'
-    } else if (/^\w+([\\.-]?\w+)*@\w+([\\.-]?\w+)*(\.\w{2,3})+$/.test(values.email)) {
-        errors.email = 'Invalid email format';
-    }
-    if (!values.channel) {
-        errors.channel = 'Required';
-    }
-    return errors;
   }
 
   const validationSchema = Yup.object({
@@ -70,6 +57,32 @@ import * as Yup from 'yup';
                   name='channel'
                 />
                 <ErrorMessage name='channel' />
+            </div>
+            <button type='submit'>Submit</button>
+
+            <div className='form-control'>
+              <label htmlFor='comments'>Channel</label>
+                <Field 
+                  as='textarea'
+                  id='comments'
+                  name='comments'
+                />
+                <ErrorMessage name='comments' />
+            </div>
+
+            <div className='form-control'>
+              <label htmlFor='address'>Address</label>
+                <Field 
+                  id='address'
+                  name='address'
+                  {
+                    (props) => {
+                      console.log(props)
+                      return <input id='address' />
+                    }
+                  }
+                />
+                <ErrorMessage name='comments' />
             </div>
             <button type='submit'>Submit</button>
           </Form>
