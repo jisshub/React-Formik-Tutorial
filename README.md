@@ -556,21 +556,48 @@ https://www.youtube.com/watch?v=cMBqJo9KeO0&list=PLC3y8-rFHvwiPmFbtzEWjESkqBVDbd
 Group together the data into a nested object. For example, In a form there are 2 fields to insert social media profile link like facebook and twitter. In that case we can group together those fields into a seperate object. There are some steps involved in this process.
 
 ## Step 1:
-  - Add the nested object into initialValues object.
+  - Add the nested object into *initialValues* object.
   
 ## Step 2:
   - When we define the fields, make sure we specify the *name* attribute with dot notation on the nested object.
 
 ![](./images/screenshot-4.png)
 
+# Arrays
 
-
-
-
+Storing phone numbers in an array.
 
 ```js
+<div className='form-control'>
+  <label htmlFor='primaryPh'>Primary Phone Number</label>
+  <Field
+    type='text'
+    id='primaryPh'
+    name='phoneNumbers[0]'
+  />
+</div>
 
+<div className='form-control'>
+  <label htmlFor='secondaryPh'>
+    Secondary Phone Number
+  </label>
+  <Field
+    type='text'
+    id='secondaryPh'
+    name='phoneNumbers[1]'
+  />
+</div>
 ```
+
+# FieldArray Component
+
+```js
+<FieldArray name='phNumbers'>
+
+</FieldArray>
+```
+
+
 
 
 

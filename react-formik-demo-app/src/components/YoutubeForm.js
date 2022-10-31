@@ -1,5 +1,5 @@
 import React from 'react';
-import {Formik, Form, Field, ErrorMessage} from 'formik';
+import {Formik, Form, Field, ErrorMessage, FieldArray} from 'formik';
 import TextError from './TextError';
 import * as Yup from 'yup'; 
 
@@ -12,7 +12,8 @@ import * as Yup from 'yup';
     social: {
       facebook: '',
       twitter: ''
-    }
+    },
+    phoneNumbers: ['', '']
   }
 
   const onSubmit = values => {
@@ -128,8 +129,39 @@ import * as Yup from 'yup';
                   name='social.twitter'
                 />
               </div>
+              
+              <div className='form-control'>
+                <label htmlFor='primaryPh'>Primary Phone Number</label>
+                <Field
+                  type='text'
+                  id='primaryPh'
+                  name='phoneNumbers[0]'
+                />
+              </div>
 
+              <div className='form-control'>
+                <label htmlFor='secondaryPh'>
+                  Secondary Phone Number
+                </label>
+                <Field
+                  type='text'
+                  id='secondaryPh'
+                  name='phoneNumbers[1]'
+                />
+              </div>
+
+              <div className='form-control'>
+                  <FieldArray name='phNumbers'>
+                      {
+                        (props) => {
+                          const {field, meta, form} = props
+                          console.log(props)
+                        }
+                      }
+                  </FieldArray>
+s              </div>
               <button type='submit'>Submit</button>
+              
           </Form>
       </Formik>
     )
