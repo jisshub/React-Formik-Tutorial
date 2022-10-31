@@ -28,7 +28,7 @@
 
 [Fields Revisited](#fields-revisited)
 
-[ErrorMessage Component Revisited](#errormessage-message-revisited)
+[ErrorMessage Component Revisited](#errormessage-component-revisited)
 
 
 # Formik
