@@ -153,13 +153,24 @@ import * as Yup from 'yup';
               <div className='form-control'>
                   <FieldArray name='phNumbers'>
                       {
-                        (props) => {
-                          const {field, meta, form} = props
-                          console.log(props)
+                        (fieldArrayProps) => {
+                          console.log('fieldArrayProps', fieldArrayProps);
+                          const {push, remove, form} = fieldArrayProps;
+                          const {values} = form;
+                          const {phNumbers} = values;
+                          return (
+                            <div>
+                              {phNumbers.map((phNumber, index) => (
+                                <div key={index}>
+                                  <Field name={`phNumbers[${index}]`} />
+                                </div>
+                              ))}
+                            </div>
+                          )
                         }
                       }
                   </FieldArray>
-s              </div>
+              </div>
               <button type='submit'>Submit</button>
               
           </Form>
