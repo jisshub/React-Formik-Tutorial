@@ -36,7 +36,7 @@ import * as Yup from 'yup';
                     id="name" 
                     name='name'
                   />
-                  <ErrorMessage name='name' />
+                  <ErrorMessage name='name' component={'div'} />
               </div>
               
               <div className='form-control'>

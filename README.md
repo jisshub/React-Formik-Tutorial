@@ -464,10 +464,47 @@ https://www.youtube.com/watch?v=TOPYgxjh9lk&list=PLC3y8-rFHvwiPmFbtzEWjESkqBVDbd
 3. Implementation of Field component with the render props pattern
 
 
+```js
+<Field 
+  id='address'
+  name='address'
+  {
+    ...props => {
+      const {field, meta} = props
+      console.log('Render Props', props);
+      return (
+        <div>
+          <input 
+            type={'text'}
+            id='address'
+            {...field}
+          />
+          {
+          meta.touched && meta.error ? 
+            <div>{meta.error}</div> : null
+          }
+        </div>
+      )
+      }
+    }
+/>
+```
+
+# ErrorMessage Component Revisited
+
+- Currently error message component is not inside any html tag. Check below screenshot. There is a Required you can see in the console with no tag around it.
+ 
+![](./images/screenshot-1.png)
+
+- To wrap inside a tag or element, we have to pass a component prop. Set the component prop to div.
+
+```js
+<ErrorMessage name='name' component={'div'} />
+```
+
+- Currenlty no red color for error message. For that we create a seperate component.
 
 
-
-<!-- time: 6:30 -->
 
 
 
