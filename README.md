@@ -26,6 +26,11 @@
 
 [ErrorMessage Component](#errormessage-component)
 
+[Fields Revisited](#fields-revisited)
+
+[Error Message Revisited](#error-message-revisited)
+
+
 # Formik
 
 Formik is a library that helps you deal with forms in React.
@@ -456,7 +461,9 @@ https://www.youtube.com/watch?v=TOPYgxjh9lk&list=PLC3y8-rFHvwiPmFbtzEWjESkqBVDbd
 ```
   - Use *as* prop inside Field component.
 
-3. Using render props 
+3. Implementation of Field component with the render props pattern
+
+
 
 
 
