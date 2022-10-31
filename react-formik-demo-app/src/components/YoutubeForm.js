@@ -1,5 +1,6 @@
 import React from 'react';
 import {Formik, Form, Field, ErrorMessage, FormikProps} from 'formik';
+import TextError from './TextError';
 import * as Yup from 'yup'; 
 
   const initialValues = {
@@ -36,7 +37,10 @@ import * as Yup from 'yup';
                     id="name" 
                     name='name'
                   />
-                  <ErrorMessage name='name' component={'div'} />
+                  <ErrorMessage 
+                    name='name' 
+                    component={TextError}
+                  />
               </div>
               
               <div className='form-control'>
@@ -46,7 +50,9 @@ import * as Yup from 'yup';
                     id='email' 
                     name='email'
                   />
-                  <ErrorMessage name='email' />
+                  <ErrorMessage name='email'>
+                    {errorMsg => <div className='error'>{errorMsg}</div>}
+                  </ErrorMessage>
               </div>
             
               <div className='form-control'>

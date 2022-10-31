@@ -502,7 +502,65 @@ https://www.youtube.com/watch?v=TOPYgxjh9lk&list=PLC3y8-rFHvwiPmFbtzEWjESkqBVDbd
 <ErrorMessage name='name' component={'div'} />
 ```
 
-- Currenlty no red color for error message. For that we create a seperate component.
+- Currently no red color for error message. For that we do have 2 ways.
+
+## Method 1
+
+**TextError.js**
+
+```js
+import React, { Children } from 'react';
+
+export default function TextError(props) {
+  return (
+    <div className='error'>
+        {props.children}
+    </div>
+  )
+}
+```
+
+Here this class *error* correspond to the *error* selector in *App.css* file.
+
+**App.css**
+
+```css
+.error {
+  color: red;
+}
+```
+
+Now we can observe that color is changed to red for input field name.
+
+![](./images/screenshot-2.png)
+
+## Method 2
+
+Alternate way is to use render props pattern. We will test email field here.
+
+```js
+<ErrorMessage name='email'>
+  {errorMsg => <div className='error'>{errorMsg}</div>}
+</ErrorMessage>
+```
+
+We define an arrow function that renders a div element here with class as `error`. This way the error message of email field appears in red color.
+
+![](./images/screenshot-3.png)
+
+# Nested Objects
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
