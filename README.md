@@ -550,6 +550,31 @@ We define an arrow function that renders a div element here with class as `error
 
 # Nested Objects
 
+https://www.youtube.com/watch?v=cMBqJo9KeO0&list=PLC3y8-rFHvwiPmFbtzEWjESkqBVDbdgGu&index=20
+
+Group together the data into a nested object. For example, In a form there are 2 fields to insert social media profile link like facebook and twitter. In that case we can group together those fields into a seperate object. There are some steps involved in this process.
+
+## Step 1:
+  - Add the nested object into initialValues object.
+  
+## Step 2:
+  - When we define the fields, make sure we specify the *name* attribute with dot notation on the nested object.
+
+![](./images/screenshot-4.png)
+
+
+
+
+
+```js
+
+```
+
+
+
+
+
+
 
 
 

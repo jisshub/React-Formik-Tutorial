@@ -1,5 +1,5 @@
 import React from 'react';
-import {Formik, Form, Field, ErrorMessage, FormikProps} from 'formik';
+import {Formik, Form, Field, ErrorMessage} from 'formik';
 import TextError from './TextError';
 import * as Yup from 'yup'; 
 
@@ -8,7 +8,11 @@ import * as Yup from 'yup';
     email: '',
     channel: '',
     comments: '',
-    address: ''
+    address: '',
+    social: {
+      facebook: '',
+      twitter: ''
+    }
   }
 
   const onSubmit = values => {
@@ -62,7 +66,10 @@ import * as Yup from 'yup';
                     id='channel'
                     name='channel'
                   />
-                  <ErrorMessage name='channel' />
+                  <ErrorMessage name='channel'>
+                    {errorMsg => 
+                      <div className='error'>{errorMsg}</div>}
+                  </ErrorMessage>
               </div>
               <button type='submit'>Submit</button>
 
@@ -103,6 +110,25 @@ import * as Yup from 'yup';
                   />
                   <ErrorMessage name='comments' />
               </div>
+
+              <div className='form-control'>
+                <label htmlFor='facebook'>Facebook Profile</label>
+                <Field 
+                  type='text'
+                  id='facebook'  
+                  name='social.facebook'
+                />
+              </div>
+
+              <div className='form-control'>
+                <label htmlFor='twitter'>Twitter Profile</label>
+                <Field 
+                  type='text'
+                  id='twitter'  
+                  name='social.twitter'
+                />
+              </div>
+
               <button type='submit'>Submit</button>
           </Form>
       </Formik>
