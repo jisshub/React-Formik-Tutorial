@@ -28,7 +28,7 @@
 
 [Fields Revisited](#fields-revisited)
 
-[Error Message Revisited](#error-message-revisited)
+[ErrorMessage Component Revisited](#errormessage-message-revisited)
 
 
 # Formik
@@ -561,6 +561,7 @@ Group together the data into a nested object. For example, In a form there are 2
   - When we define the fields, make sure we specify the *name* attribute with dot notation on the nested object.
 
 ![](./images/screenshot-4.png)
+
 
 
 
