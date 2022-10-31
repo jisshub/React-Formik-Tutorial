@@ -30,6 +30,7 @@
 
 [ErrorMessage Component Revisited](#errormessage-component-revisited)
 
+[Nested Objects](#nested-objects)
 
 # Formik
 
